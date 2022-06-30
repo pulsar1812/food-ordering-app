@@ -1,0 +1,140 @@
+.container {
+  height: calc(100vh - 6rem);
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgContainer {
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.right {
+  flex: 1;
+  padding: 1.2rem;
+}
+
+.price {
+  color: #d1411e;
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-bottom: #d1411e;
+}
+
+.sizes {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.size {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.size:nth-child(2) {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.size:last-child {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.label {
+  position: absolute;
+  top: -0.4rem;
+  right: -1.6rem;
+  background-color: teal;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0 0.4rem;
+  border-radius: 0.8rem;
+}
+
+.ingredients {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-right: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.quantity {
+  width: 3rem;
+  height: 2rem;
+}
+
+.button {
+  height: 2rem;
+  margin-left: 0.7em;
+  background-color: #d1411e;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    height: auto;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 1.2rem;
+  }
+
+  .imgContainer {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .title {
+    margin: 0.3rem;
+  }
+
+  .sizes {
+    width: 100%;
+    padding: 0 1.2rem;
+  }
+
+  .ingredients {
+    flex-direction: column;
+  }
+
+  .option {
+    margin: 0.6rem;
+    font-size: 1.1rem;
+  }
+
+  .checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .quantity,
+  .button {
+    height: 3rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

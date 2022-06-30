@@ -1,0 +1,119 @@
+.container {
+  padding: 3rem;
+  display: flex;
+}
+
+.left {
+  flex: 2;
+}
+
+.right {
+  flex: 1;
+}
+
+.imgContainer {
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 1.2rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #d1411e;
+}
+
+.total {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.wrapper {
+  width: 90%;
+  max-height: 20rem;
+  background-color: #333;
+  color: #fff;
+  padding: 3rem;
+  padding-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.totalTextTitle {
+  margin-right: 0.6rem;
+}
+
+.button {
+  height: 2rem;
+  color: #d1411e;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1.2rem;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    padding: 1.2rem;
+  }
+
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .trTitle {
+    display: none;
+  }
+
+  .tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+
+  .imgContainer {
+    width: 35vw;
+    height: 35vw;
+  }
+
+  .name,
+  .total {
+    font-size: 1.5rem;
+  }
+
+  .extras,
+  .price,
+  .quantity {
+    font-size: 1.3rem;
+  }
+
+  .price::before {
+    content: 'Price: ';
+    font-weight: 500;
+  }
+
+  .quantity::before {
+    content: 'Quantity: ';
+    font-weight: 500;
+  }
+
+  .total::before {
+    content: 'Total: ';
+    font-weight: 500;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+}

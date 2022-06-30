@@ -1,0 +1,58 @@
+.container {
+  height: calc(100vh - 6rem);
+  background-color: #222;
+  display: flex;
+}
+
+.item {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+.item:last-child {
+  flex: 2;
+  padding: 3rem;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1;
+  padding: 0 1.2rem;
+}
+
+.motto {
+  color: #deddd2
+}
+
+.title {
+  font-size: 1rem;
+  color: #b7903c;
+}
+
+.text {
+  color: lightgray;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    height: auto;
+    text-align: center;
+  }
+
+  .item:first-child {
+    display: none;
+  }
+
+  .item {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .text {
+    font-size: 1.2rem;
+  }
+}
