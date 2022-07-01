@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import axios from 'axios';
 
+import dbConnect from '../lib/dbConnect';
 import Featured from '../components/Featured';
 import PizzaList from '../components/PizzaList';
 import styles from '../styles/Home.module.css';
@@ -20,13 +21,16 @@ export default function Home({ pizzaList }) {
 }
 
 export async function getServerSideProps() {
-  const res = await axios.get(`http://localhost:3000/api/products`);
+  await dbConnect();
 
-  console.log(res.data);
+  const res = await fetch(`http://localhost:3000/api/products`);
+  const data = await res.json();
+
+  // console.log(data);
 
   return {
     props: {
-      pizzaList: res.data,
+      pizzaList: data,
     },
   };
 }
