@@ -28,6 +28,10 @@
   color: #d1411e;
 }
 
+.extras {
+  text-align: center;
+}
+
 .total {
   font-size: 1.2rem;
   font-weight: 500;
@@ -55,6 +59,21 @@
   font-weight: bold;
   cursor: pointer;
   margin-top: 1.2rem;
+}
+
+.paymentMethods {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.payButton {
+  padding: 0.6rem 0.3rem;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+  background-color: #fff;
+  color: #1565e6;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 480px) {
@@ -117,3 +136,4 @@
     width: 100%;
   }
 }
+

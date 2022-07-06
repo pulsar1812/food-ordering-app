@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import axios from 'axios';
 
 import dbConnect from '../lib/dbConnect';
 import Featured from '../components/Featured';

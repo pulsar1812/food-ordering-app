@@ -1,9 +1,12 @@
 import Image from 'next/image';
 
+import dbConnect from '../../lib/dbConnect';
 import styles from '../../styles/Order.module.css';
 
-export default function Order() {
-  const status = 0;
+export default function Order({ order }) {
+  console.log(order);
+
+  const status = order.status;
 
   const statusClass = (index) => {
     if (index - status < 1) return styles.done;
@@ -27,16 +30,16 @@ export default function Order() {
             <tbody>
               <tr className={styles.tr}>
                 <td>
-                  <span className={styles.id}>1868238932496824</span>
+                  <span className={styles.id}>{order._id}</span>
                 </td>
                 <td>
-                  <span className={styles.name}>John Doe</span>
+                  <span className={styles.name}>{order.customer}</span>
                 </td>
                 <td>
-                  <span className={styles.address}>11 Golden St. LA</span>
+                  <span className={styles.address}>{order.address}</span>
                 </td>
                 <td>
-                  <span className={styles.total}>$79.80</span>
+                  <span className={styles.total}>${order.total}</span>
                 </td>
               </tr>
             </tbody>
@@ -104,13 +107,13 @@ export default function Order() {
         <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b>$79.60
+            <b className={styles.totalTextTitle}>Subtotal:</b>${order.total}
           </div>
           <div className={styles.totalText}>
             <b className={styles.totalTextTitle}>Discount:</b>$0.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>$79.60
+            <b className={styles.totalTextTitle}>Total:</b>${order.total}
           </div>
           <button disabled className={styles.button}>
             PAID
@@ -119,4 +122,17 @@ export default function Order() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps({ params }) {
+  await dbConnect();
+
+  const res = await fetch(`http://localhost:3000/api/orders/${params.id}`);
+  const data = await res.json();
+
+  return {
+    props: {
+      order: data,
+    },
+  };
 }
