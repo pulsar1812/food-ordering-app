@@ -60,6 +60,7 @@
 .listItem {
   margin: 1.2rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .cart {

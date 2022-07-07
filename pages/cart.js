@@ -9,10 +9,12 @@ import {
 } from '@paypal/react-paypal-js';
 
 import { reset } from '../redux/cartSlice';
+import OrderDetail from '../components/OrderDetail';
 import styles from '../styles/Cart.module.css';
 
 export default function Cart() {
   const [open, setOpen] = useState(false);
+  const [cash, setCash] = useState(false);
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -173,7 +175,12 @@ export default function Cart() {
 
           {open ? (
             <div className={styles.paymentMethods}>
-              <button className={styles.payButton}>Cash on Delivery</button>
+              <button
+                className={styles.payButton}
+                onClick={() => setCash(true)}
+              >
+                Cash on Delivery
+              </button>
               <PayPalScriptProvider
                 options={{
                   'client-id':
@@ -193,6 +200,7 @@ export default function Cart() {
           )}
         </div>
       </div>
+      {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
     </div>
   );
 }

@@ -14,15 +14,6 @@ export default function Product({ pizza }) {
 
   const dispatch = useDispatch();
 
-  // const pizza = {
-  //   id: 1,
-  //   image: '/images/pizza.png',
-  //   title: 'CAMPAGNOLA',
-  //   prices: [19.9, 23.9, 27.9],
-  //   description:
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.',
-  // };
-
   function changePrice(number) {
     setItemPrice(itemPrice + number);
   }
