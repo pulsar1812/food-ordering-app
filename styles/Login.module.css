@@ -1,0 +1,33 @@
+.container {
+  height: calc(100vh - 6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  height: 2.5rem;
+  margin-bottom: 1.2rem;
+  padding: 0 0.6rem;
+}
+
+.button {
+  height: 2.5rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  background-color: #1565e6;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error {
+  font-size: 1rem;
+  color: red;
+}
+
