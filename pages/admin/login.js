@@ -12,7 +12,7 @@ export default function Login() {
 
   async function handleClick() {
     try {
-      await fetch('http://localhost:3000/api/login', {
+      const res = await fetch('http://localhost:3000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,7 +20,15 @@ export default function Login() {
         body: JSON.stringify({ username, password }),
       });
 
-      router.push('/admin');
+      const data = await res.json();
+
+      console.log(data);
+
+      if (res.ok) {
+        router.push('/admin');
+      } else {
+        setError(true);
+      }
     } catch (err) {
       setError(true);
     }
@@ -29,7 +37,7 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <h1>Admin Login</h1>
+        <h1>Login to Admin Dashboard</h1>
         <input
           type='text'
           value={username}

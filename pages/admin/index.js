@@ -125,7 +125,18 @@ export default function Admin({ products, orders }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(ctx) {
+  const myCookie = ctx.req?.cookies || '';
+
+  if (myCookie.token !== process.env.TOKEN) {
+    return {
+      redirect: {
+        destination: '/admin/login',
+        permanent: false,
+      },
+    };
+  }
+
   await dbConnect();
 
   const productRes = await fetch(`http://localhost:3000/api/products`);
