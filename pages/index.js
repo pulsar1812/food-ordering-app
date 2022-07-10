@@ -10,6 +10,7 @@ import styles from '../styles/Home.module.css';
 
 export default function Home({ pizzaList, admin }) {
   const [close, setClose] = useState();
+
   return (
     <div className={styles.container}>
       <Head>
