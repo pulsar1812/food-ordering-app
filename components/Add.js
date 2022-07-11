@@ -24,7 +24,16 @@ export default function Add({ setClose }) {
     setExtraOptions((prev) => [...prev, extra]);
   }
 
-  function handleCreate() {}
+  async function handleCreate() {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    // try {
+    //   const uploadRes = await fetch()
+    // } catch (err) {
+    //   console.log(err);
+    // }
+  }
 
   return (
     <div className={styles.container}>
@@ -53,7 +62,7 @@ export default function Add({ setClose }) {
             rows={4}
             type='text'
             value={description}
-            className={styles.input}
+            className={`${styles.input} ${styles.textarea}`}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
@@ -105,7 +114,7 @@ export default function Add({ setClose }) {
           </div>
           <div className={styles.extraItems}>
             {extraOptions.map((option) => (
-              <span key={option._id} className={styles.extraItem}>
+              <span key={option.text} className={styles.extraItem}>
                 {option.text}
               </span>
             ))}

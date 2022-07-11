@@ -41,9 +41,13 @@
   height: 2.5rem;
 }
 
+.textarea {
+  font-family: inherit;
+}
+
 .button {
   border: none;
-  background-color: #1565e6;
+  background-color: var(--color-secondary);
   color: #fff;
   padding: 0.6rem 1.2rem;
   font-size: 1rem;

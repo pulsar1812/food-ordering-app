@@ -1,7 +1,7 @@
 .container {
   height: 6rem;
   padding: 0 3rem;
-  background-color: #d1411e;
+  background-color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: #d1411e;
+  color: var(--color-primary);
 }
 
 @media screen and (max-width: 480px) {

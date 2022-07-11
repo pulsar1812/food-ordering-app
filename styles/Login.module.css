@@ -20,7 +20,7 @@
   height: 2.5rem;
   margin-bottom: 1.2rem;
   border: none;
-  background-color: #1565e6;
+  background-color: var(--color-secondary);
   color: #fff;
   font-size: 1.2rem;
   font-weight: 600;

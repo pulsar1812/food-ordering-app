@@ -21,7 +21,7 @@
 }
 
 .button:first-child {
-  background-color: #1565e6;
+  background-color: var(--color-secondary);
   margin-right: 0.6rem;
 }
 

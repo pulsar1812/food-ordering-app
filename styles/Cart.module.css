@@ -25,7 +25,7 @@
 .name {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #d1411e;
+  color: var(--color-primary);
 }
 
 .extras {
@@ -55,7 +55,7 @@
 
 .button {
   height: 2rem;
-  color: #d1411e;
+  color: var(--color-primary);
   font-weight: bold;
   cursor: pointer;
   margin-top: 1.2rem;

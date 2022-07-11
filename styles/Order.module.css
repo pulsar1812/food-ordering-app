@@ -75,7 +75,7 @@
 .button {
   background-color: #fff;
   height: 2rem;
-  color: teal;
+  color: var(--color-secondary);
   font-weight: bold;
   margin-top: 1.2rem;
   cursor: not-allowed;
