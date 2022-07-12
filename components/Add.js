@@ -27,12 +27,42 @@ export default function Add({ setClose }) {
   async function handleCreate() {
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('upload_preset', 'uploads');
 
-    // try {
-    //   const uploadRes = await fetch()
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    try {
+      const uploadRes = await fetch(
+        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload`,
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
+      const data = await uploadRes.json();
+
+      const { url } = data;
+
+      const newProduct = {
+        title,
+        description,
+        prices,
+        extraOptions,
+        image: url,
+      };
+
+      console.log(newProduct);
+
+      await fetch('http://localhost:3000/api/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newProduct),
+      });
+
+      setClose(true);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
@@ -121,7 +151,7 @@ export default function Add({ setClose }) {
           </div>
         </div>
 
-        <button className={styles.addButton} onClick={handleCreate}>
+        <button className={styles.createButton} onClick={handleCreate}>
           Create
         </button>
       </div>

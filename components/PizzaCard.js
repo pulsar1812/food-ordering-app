@@ -8,7 +8,7 @@ export default function PizzaCard({ pizza }) {
     <div className={styles.container}>
       <Link href={`/products/${pizza._id}`}>
         <a>
-          <Image src='/images/pizza.png' alt='' width={500} height={500} />
+          <Image src={pizza.image} alt='' width={500} height={500} />
         </a>
       </Link>
       <h1 className={styles.title}>{pizza.title}</h1>

@@ -9,7 +9,7 @@ import Add from '../components/Add';
 import styles from '../styles/Home.module.css';
 
 export default function Home({ pizzaList, admin }) {
-  const [close, setClose] = useState();
+  const [close, setClose] = useState(true);
 
   return (
     <div className={styles.container}>
