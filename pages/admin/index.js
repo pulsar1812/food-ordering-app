@@ -21,6 +21,10 @@ export default function Admin({ products, orders }) {
     }
   }
 
+  async function handleEdit(id) {
+    console.log('Todo Edit feature');
+  }
+
   async function handleStatus(id) {
     const item = orderList.filter((order) => order._id === id)[0];
     const currentStatus = item.status;
@@ -74,7 +78,12 @@ export default function Admin({ products, orders }) {
                 <td>{product.title}</td>
                 <td>${product.prices[0]}</td>
                 <td>
-                  <button className={styles.button}>Edit</button>
+                  <button
+                    className={styles.button}
+                    onClick={() => handleEdit(product._id)}
+                  >
+                    Edit
+                  </button>
                   <button
                     className={styles.button}
                     onClick={() => handleDelete(product._id)}
