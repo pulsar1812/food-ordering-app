@@ -2,11 +2,13 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 import dbConnect from '../../lib/dbConnect';
+import Edit from '../../components/Edit';
 import styles from '../../styles/Admin.module.css';
 
 export default function Admin({ products, orders }) {
   const [pizzaList, setPizzaList] = useState(products);
   const [orderList, setOrderList] = useState(orders);
+  const [close, setClose] = useState(true);
 
   const status = ['preparing', 'on-the-way', 'delivered'];
 
@@ -22,6 +24,7 @@ export default function Admin({ products, orders }) {
   }
 
   async function handleEdit(id) {
+    setClose(false);
     console.log('Todo Edit feature');
   }
 
@@ -130,6 +133,8 @@ export default function Admin({ products, orders }) {
           </tbody>
         </table>
       </div>
+
+      {!close && <Edit setClose={setClose} />}
     </div>
   );
 }
